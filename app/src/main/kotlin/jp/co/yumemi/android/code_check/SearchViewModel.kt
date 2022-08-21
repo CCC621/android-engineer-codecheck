@@ -20,7 +20,7 @@ import java.util.*
 /**
  * リポジトリ検索結果を保持するViewModel
  */
-class OneViewModel(
+class SearchViewModel(
     val context: Context
 ) : ViewModel() {
 
