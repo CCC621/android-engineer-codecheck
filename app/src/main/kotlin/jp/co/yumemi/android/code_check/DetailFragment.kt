@@ -30,10 +30,10 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             it.ownerIconView.load(item.ownerIconUrl)
             it.nameView.text = item.name
             it.languageView.text = item.language
-            it.starsView.text = "${item.stargazersCount} stars"
-            it.watchersView.text = "${item.watchersCount} watchers"
-            it.forksView.text = "${item.forksCount} forks"
-            it.openIssuesView.text = "${item.openIssuesCount} open issues"
+            it.starsView.text = getString(R.string.detail_fragment_stars, item.stargazersCount)
+            it.watchersView.text = getString(R.string.detail_fragment_watchers, item.watchersCount)
+            it.forksView.text = getString(R.string.detail_fragment_forks, item.forksCount)
+            it.openIssuesView.text = getString(R.string.detail_fragment_open_issue, item.openIssuesCount)
         }
     }
 }
