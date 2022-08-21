@@ -19,20 +19,21 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private val args: DetailFragmentArgs by navArgs()
     private var _binding: FragmentDetailBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("検索した日時", lastSearchDate.toString())
         _binding = FragmentDetailBinding.bind(view)
-        var item = args.item
-
-        binding.ownerIconView.load(item.ownerIconUrl);
-        binding.nameView.text = item.name;
-        binding.languageView.text = item.language;
-        binding.starsView.text = "${item.stargazersCount} stars";
-        binding.watchersView.text = "${item.watchersCount} watchers";
-        binding.forksView.text = "${item.forksCount} forks";
-        binding.openIssuesView.text = "${item.openIssuesCount} open issues";
+        val item = args.item
+        binding?.let {
+            it.ownerIconView.load(item.ownerIconUrl)
+            it.nameView.text = item.name
+            it.languageView.text = item.language
+            it.starsView.text = getString(R.string.detail_fragment_stars, item.stargazersCount)
+            it.watchersView.text = getString(R.string.detail_fragment_watchers, item.watchersCount)
+            it.forksView.text = getString(R.string.detail_fragment_forks, item.forksCount)
+            it.openIssuesView.text = getString(R.string.detail_fragment_open_issue, item.openIssuesCount)
+        }
     }
 }
