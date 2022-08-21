@@ -81,24 +81,24 @@ class CustomAdapter(
     class ViewHolder(view: View): RecyclerView.ViewHolder(view)
 
     interface OnItemClickListener{
-    	fun itemClick(item: item)
+        fun itemClick(item: item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
-    	val _view= LayoutInflater.from(parent.context)
+        val _view= LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_item, parent, false)
-    	return ViewHolder(_view)
+        return ViewHolder(_view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-    	val _item= getItem(position)
+        val _item= getItem(position)
         (holder.itemView.findViewById<View>(R.id.repositoryNameView) as TextView).text=
             _item.name
 
-    	holder.itemView.setOnClickListener{
-     		itemClickListener.itemClick(_item)
-    	}
+        holder.itemView.setOnClickListener{
+             itemClickListener.itemClick(_item)
+        }
     }
 }
