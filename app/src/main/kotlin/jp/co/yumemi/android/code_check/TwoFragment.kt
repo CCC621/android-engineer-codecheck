@@ -12,11 +12,14 @@ import coil.load
 import jp.co.yumemi.android.code_check.TopActivity.Companion.lastSearchDate
 import jp.co.yumemi.android.code_check.databinding.FragmentTwoBinding
 
+/**
+ * リポジトリの詳細表示用Fragment
+ */
 class TwoFragment : Fragment(R.layout.fragment_two) {
 
     private val args: TwoFragmentArgs by navArgs()
-    private var binding: FragmentTwoBinding? = null
-    private val _binding get() = binding!!
+    private var _binding: FragmentTwoBinding? = null
+    private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

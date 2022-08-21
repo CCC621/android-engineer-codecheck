@@ -18,7 +18,7 @@ import org.json.JSONObject
 import java.util.*
 
 /**
- * TwoFragment で使う
+ * リポジトリ検索結果を保持するViewModel
  */
 class OneViewModel(
     val context: Context
