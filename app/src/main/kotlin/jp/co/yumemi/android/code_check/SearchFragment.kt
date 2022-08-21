@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.*
 import jp.co.yumemi.android.code_check.databinding.FragmentSearchBinding
 import kotlinx.coroutines.DelicateCoroutinesApi
 
+
 /**
  * リポジトリの検索結果一覧表示用Fragment
  */

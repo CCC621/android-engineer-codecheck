@@ -14,12 +14,14 @@ import jp.co.yumemi.android.code_check.TopActivity.Companion.lastSearchDate
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.DelicateCoroutinesApi
 import org.json.JSONObject
 import java.util.*
 
 /**
  * リポジトリ検索結果を保持するViewModel
  */
+@DelicateCoroutinesApi
 class SearchViewModel(
     val context: Context
 ) : ViewModel() {
