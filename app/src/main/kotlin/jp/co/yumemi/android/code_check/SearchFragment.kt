@@ -12,18 +12,18 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.*
-import jp.co.yumemi.android.code_check.databinding.FragmentOneBinding
+import jp.co.yumemi.android.code_check.databinding.FragmentSearchBinding
 
 /**
  * リポジトリの検索結果一覧表示用Fragment
  */
-class OneFragment : Fragment(R.layout.fragment_one){
+class SearchFragment : Fragment(R.layout.fragment_search){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
 
-        val binding = FragmentOneBinding.bind(view)
+        val binding = FragmentSearchBinding.bind(view)
         val viewModel = OneViewModel(context!!)
         val layoutManager = LinearLayoutManager(context!!)
         val dividerItemDecoration = DividerItemDecoration(context!!, layoutManager.orientation)
@@ -55,7 +55,7 @@ class OneFragment : Fragment(R.layout.fragment_one){
 
     fun gotoRepositoryFragment(item: Item)
     {
-        val action= OneFragmentDirections
+        val action= SearchFragmentDirections
             .actionRepositoriesFragmentToRepositoryFragment(item= item)
         findNavController().navigate(action)
     }
