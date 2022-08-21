@@ -13,10 +13,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.*
 import jp.co.yumemi.android.code_check.databinding.FragmentSearchBinding
+import kotlinx.coroutines.DelicateCoroutinesApi
 
 /**
  * リポジトリの検索結果一覧表示用Fragment
  */
+@DelicateCoroutinesApi
 class SearchFragment : Fragment(R.layout.fragment_search){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
@@ -74,7 +76,7 @@ val diffUtil= object: DiffUtil.ItemCallback<Item>(){
 
 }
 
-class CustomAdapter(private val itemClickListener: OnItemClickListener, ) : ListAdapter<Item, CustomAdapter.ViewHolder>(diffUtil) {
+class CustomAdapter(private val itemClickListener: OnItemClickListener ) : ListAdapter<Item, CustomAdapter.ViewHolder>(diffUtil) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
